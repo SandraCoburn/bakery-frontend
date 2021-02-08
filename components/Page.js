@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   format("woff2");
   font-weight: normal;
   font-style: normal;
+ 
 }
 html {
   --green:  #c1e5e3,
@@ -19,6 +20,7 @@ html {
   --bs: 0 12px 24px 0 rgba(0, 0, 0, 0.09),
   box-sizing: border-box;
   font-size: 10px;
+   color: #866f57;
 }
 *,*:before,*:after {
 box-sizing: inherit;

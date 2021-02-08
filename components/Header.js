@@ -4,7 +4,7 @@ import Nav from './Nav';
 
 const Logo = styled.h1`
   background: #c1e5e3;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-left: 2rem;
   position: relative;
   z-index: 2;
