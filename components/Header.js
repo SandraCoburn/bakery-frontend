@@ -26,7 +26,7 @@ const HeaderStyled = styled.header`
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     @media (max-width: 1300px) {
       grid-template-columns: 1fr;
       justify-content: center;
@@ -46,11 +46,11 @@ export default function Header() {
         <Logo>
           <Link href="/">Midnight Bakery</Link>
         </Logo>
+        <Nav />
       </div>
       <div className="sub-bar">
         <p>Search</p>
       </div>
-      <Nav />
     </HeaderStyled>
   );
 }
