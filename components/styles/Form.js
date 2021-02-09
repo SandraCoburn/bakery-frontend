@@ -33,13 +33,13 @@ const Form = styled.form`
     border: 1px solid black;
     &:focus {
       outline: 0;
-      border-color: var(--red);
+      border-color: var(--green, green);
     }
   }
   button,
   input[type='submit'] {
     width: auto;
-    background: red;
+    background: #c1e5e3;
     color: white;
     border: 0;
     font-size: 2rem;
@@ -59,14 +59,14 @@ const Form = styled.form`
       display: block;
       background-image: linear-gradient(
         to right,
-        #ff3019 0%,
-        #e2b04a 50%,
-        #ff3019 100%
+        #c1e5e3 0%,
+        beige 50%,
+        pink 100%
       );
     }
     &[aria-busy='true']::before {
       background-size: 50% auto;
-      animation: ${loading} 0.5s linear infinite;
+      animation: ${loading} 0.8s linear infinite;
     }
   }
 `;
