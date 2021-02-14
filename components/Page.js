@@ -11,13 +11,13 @@ const GlobalStyles = createGlobalStyle`
  
 }
 html {
-  --green:  #c1e5e3,
-  --black: #866f57,
-  --grey: #3A3A3A,
-  --lightgrey: #E1E1E1,
-  --offWhite: #EDEDED,
-  --maxWidth: 1000px,
-  --bs: 0 12px 24px 0 rgba(0, 0, 0, 0.09),
+  --green:  #c1e5e3;
+  --black: #866f57;
+  --grey: #3A3A3A;
+  --lightGray: #E1E1E1;
+  --offWhite: #EDEDED;
+  --maxWidth: 1000px;
+  --bs: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
   box-sizing: border-box;
   font-size: 10px;
    color: #866f57;
