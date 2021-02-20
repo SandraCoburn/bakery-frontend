@@ -13,7 +13,6 @@ export const PAGINATION_QUERY = gql`
     }
   }
 `;
-
 export default function Pagination({ page }) {
   const { error, loading, data } = useQuery(PAGINATION_QUERY);
   if (loading) return 'Loading...';
@@ -24,7 +23,7 @@ export default function Pagination({ page }) {
     <PaginationStyles>
       <Head>
         <title>
-          Sick Fits - Page {page} of {pageCount}
+          Midnight Bakery - Page {page} of {pageCount}
         </title>
       </Head>
       <Link href={`/products/${page - 1}`}>

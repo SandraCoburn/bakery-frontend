@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import SignOut from './SignOut';
 import NavStyles from './styles/NavStyles';
-import { useuser } from './User';
+import { useUser } from './User';
 
 export default function Nav() {
-  const user = useuser();
+  const user = useUser();
   return (
     <NavStyles>
       <Link href="/products">Products</Link>
