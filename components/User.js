@@ -7,13 +7,27 @@ export const CURRENT_USER_QUERY = gql`
         id
         email
         name
-        # todo: Query the cart once we have it
+        cart {
+          id
+          quantity
+          product {
+            id
+            price
+            name
+            description
+            photo {
+              image {
+                publicUrlTransformed
+              }
+            }
+          }
+        }
       }
     }
   }
 `;
 
-export function useuser() {
+export function useUser() {
   const { data } = useQuery(CURRENT_USER_QUERY);
   return data?.authenticatedItem;
 }
