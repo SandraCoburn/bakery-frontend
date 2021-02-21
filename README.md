@@ -24,3 +24,7 @@ npm install
 ```
 npm run dev
 ```
+
+### Backend
+
+[Backend] tech stack: GraphQl, Keystone, MongoDB, Typescript
