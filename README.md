@@ -27,4 +27,4 @@ npm run dev
 
 ### Backend
 
-[Backend] tech stack: GraphQl, Keystone, MongoDB, Typescript
+[Backend](https://github.com/SandraCoburn/graphql-backend) `tech stack:` GraphQl, Keystone, MongoDB, Typescript
