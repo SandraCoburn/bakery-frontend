@@ -20,9 +20,21 @@ const REMOVE_FROM_CART_MUTATION = gql`
   }
 `;
 
+//To clean the apollo cache after removing an item without having to refetch the items list
+function update(cache, payload) {
+  cache.evict(cache.identify(payload.data.deleteCartItem));
+}
+
 export default function RemoveFromCArt({ id }) {
   const [removeFromCart, { loading }] = useMutation(REMOVE_FROM_CART_MUTATION, {
     variables: { id: id },
+    update,
+    // optimisticResponse: {
+    //   deleteCartItem: {
+    //     __typename: 'CartItem',
+    //     id,
+    //   },
+    // },
   });
   return (
     <BigButton
