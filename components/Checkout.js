@@ -1,5 +1,12 @@
-import { CardElement, Elements } from '@stripe/react-stripe-js';
+import {
+  CardElement,
+  Elements,
+  useElements,
+  useStripe,
+} from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import nProgress from 'nprogress';
+import { useState } from 'react';
 import styled from 'styled-components';
 import GreenButton from './styles/GreenButton';
 
@@ -14,18 +21,48 @@ const CheckoutFormStyles = styled.form`
 
 const stripeLib = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);
 
-function Checkout() {
-  function handleSubmit(e) {
+function CheckoutForm() {
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
+  const stripe = useStripe();
+  const elements = useElements();
+
+  async function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
     console.log('This is checkout');
+    // start page transition
+    nProgress.start();
+    //create the payment method via stripe(token comes back here if successfuel)
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: elements.getElement(CardElement),
+    });
+    console.log('payment', paymentMethod);
+    //handle any error from stripe
+    if (error) {
+      setError(error);
+    }
+    //send token to keystone server, via custom mutation
+    //change the page view to the order
+    //close the cart
+    setLoading(false);
+    nProgress.done();
   }
   return (
+    <CheckoutFormStyles onSubmit={handleSubmit}>
+      {error && <p style={{ color: 'red', fontSize: 12 }}>{error.message}</p>}
+      <CardElement />
+      <GreenButton>Checkout Now</GreenButton>
+    </CheckoutFormStyles>
+  );
+}
+
+function Checkout() {
+  return (
     <Elements stripe={stripeLib}>
-      <CheckoutFormStyles onSubmit={handleSubmit}>
-        <CardElement />
-        <GreenButton>Checkout Now</GreenButton>
-      </CheckoutFormStyles>
+      <CheckoutForm />
     </Elements>
   );
 }
-export default Checkout;
+export { CheckoutForm, Checkout };

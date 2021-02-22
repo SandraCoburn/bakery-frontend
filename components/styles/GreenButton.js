@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SickButton = styled.button`
+const GreenButton = styled.button`
   background: var(--green);
   color: white;
   font-weight: 500;
@@ -12,9 +12,12 @@ const SickButton = styled.button`
   transform: skew(-2deg);
   display: inline-block;
   transition: all 0.5s;
+  &:hover {
+    cursor: pointer;
+  }
   &[disabled] {
     opacity: 0.5;
   }
 `;
 
-export default SickButton;
+export default GreenButton;

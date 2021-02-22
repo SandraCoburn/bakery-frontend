@@ -12,6 +12,7 @@
 - [downshift](https://www.npmjs.com/package/downshift) library will take care of search functionality including autocomplete, state and dropdown component.
 - [lodash.debounce](https://www.npmjs.com/package/lodash.debounce) method of Function in `lodash` is used to create a <strong>debounced</strong> function which delays the given func until after the stated wait time in milliseconds have passed since the last time this debounced function was called.
 - [Stripe](https://stripe.com/) - Payments infrastructure for the internet.
+- [Stripe test cards](https://stripe.com/docs/testing) to test our stripe payment method || 4242 4242 4242 4242 ex.date: 02/22 cvc: 222 zip: 22222. With error: 4000 0084 0000 1280 zip: 2222 error: "Your postal code is incomplete."
 
 ## Getting Started:
 
