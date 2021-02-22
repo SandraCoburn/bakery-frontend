@@ -11,6 +11,7 @@
 - [React NProgress](https://www.npmjs.com/package/react-nprogress) is a slim progress bar for Ajax applications so we can let our user know that somethig is happening when they send a request to the API.
 - [downshift](https://www.npmjs.com/package/downshift) library will take care of search functionality including autocomplete, state and dropdown component.
 - [lodash.debounce](https://www.npmjs.com/package/lodash.debounce) method of Function in `lodash` is used to create a <strong>debounced</strong> function which delays the given func until after the stated wait time in milliseconds have passed since the last time this debounced function was called.
+- [Stripe](https://stripe.com/) - Payments infrastructure for the internet.
 
 ## Getting Started:
 

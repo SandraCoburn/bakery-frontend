@@ -6,7 +6,8 @@ import formatMoney from '../lib/formatMoney';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import { useCart } from '../lib/cartState';
 import CloseButton from './styles/CloseButton';
-import RemoveFromCArt from './RemoveFromCart';
+import RemoveFromCart from './RemoveFromCart';
+import Checkout from './Checkout';
 
 const CartItemStyled = styled.li`
   padding: 1rem 0;
@@ -41,7 +42,7 @@ function CartItem({ cartItem }) {
           </em>
         </p>
       </div>
-      <RemoveFromCArt id={cartItem.id} />
+      <RemoveFromCart id={cartItem.id} />
     </CartItemStyled>
   );
 }
@@ -65,6 +66,7 @@ export default function Cart() {
       </ul>
       <footer>
         <p>Total: {formatMoney(calcTotalPrice(me.cart))}</p>
+        <Checkout />
       </footer>
     </CartStyles>
   );
