@@ -29,6 +29,8 @@ npm install
 npm run dev
 ```
 
+Clear cache: Press Cmd + Shift + P, Type command Clear Editor History, Press Enter.
+
 ### Backend
 
 [Backend](https://github.com/SandraCoburn/graphql-backend) `tech stack:` GraphQl, Keystone, MongoDB, Typescript
